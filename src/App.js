@@ -1,25 +1,106 @@
-import logo from './logo.svg';
-import './App.css';
+import * as React from "react";
+import { Link, Routes, Route, useNavigate, Navigate, useLocation } from "react-router-dom";
+// import useAuth, { AuthProvider } from "./useAuth";
+import { Login, Home, Appointment, LibraryDatabase, Computers, Jobs } from "./containers";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+//! Temporary code START
+
+function Nav() {
+	// const { authed, logout } = useAuth();
+	const navigate = useNavigate();
+
+	// const handleLogout = () => {
+	// 	// logout();
+	// 	navigate("/");
+	// };
+
+	return (
+		<nav>
+			<ul>
+				<li>
+					<Link to="/">Login</Link>
+				</li>
+
+				<li>
+					<Link to="/home">Home</Link>
+				</li>
+				<li>
+					<Link to="/appointment">Appointment</Link>
+				</li>
+				<li>
+					<Link to="/database">Library Database</Link>
+				</li>
+				<li>
+					<Link to="/computers">Computers</Link>
+				</li>
+				<li>
+					<Link to="/jobs">Jobs</Link>
+				</li>
+			</ul>
+			{/* {authed && <button onClick={handleLogout}>Logout</button>} */}
+		</nav>
+	);
 }
+//! Temporary code END
 
-export default App;
+// function RequireAuth({ children }) {
+// 	const { authed } = useAuth();
+// 	const location = useLocation();
+
+// 	return authed === true ? children : <Navigate to="/" replace state={{ path: location.pathname }} />;
+// }
+
+export default function App() {
+	return (
+		// <AuthProvider>
+		<>
+			<Nav />
+
+			<Routes>
+				<Route path="/" element={<Login />} />
+
+				<Route
+					path="/home"
+					element={
+						// 	<RequireAuth>
+						<Home />
+						//  <RequireAuth>
+					}
+				/>
+				<Route
+					path="/appointment"
+					element={
+						// <RequireAuth>
+						<Appointment />
+						// <RequireAuth>
+					}
+				/>
+				<Route
+					path="/database"
+					element={
+						// <RequireAuth>
+						<LibraryDatabase />
+						// <RequireAuth>
+					}
+				/>
+				<Route
+					path="/computers"
+					element={
+						// <RequireAuth>
+						<Computers />
+						// <RequireAuth>
+					}
+				/>
+				<Route
+					path="/jobs"
+					element={
+						// <RequireAuth>
+						<Jobs />
+						// <RequireAuth>
+					}
+				/>
+			</Routes>
+		{/* </AuthProvider> */}
+		</>
+	);
+}

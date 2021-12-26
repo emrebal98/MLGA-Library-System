@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { useNavigate, Navigate, useLocation } from "react-router-dom";
+// import { useNavigate, Navigate, useLocation } from "react-router-dom";
 // import useAuth from "../../useAuth";
 import "./login.css";
 
 function Login() {
-	const navigate = useNavigate();
+	// const navigate = useNavigate();
 	// const { authed, login } = useAuth();
-	const { state } = useLocation();
+	// const { state } = useLocation();
 	const [inputs, setInputs] = useState({});
 	const [error, setError] = useState();
 
@@ -26,6 +26,8 @@ function Login() {
 	//Handle login function for Login button
 	const handleLogin = (e) => {
 		e.preventDefault();
+		//?TEMP
+		setError("Waiting for backend");
 		//Login auth
 		// login(inputs.username, inputs.password)
 		// 	.then((res) => {

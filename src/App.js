@@ -5,6 +5,8 @@ import { Login, Home, Appointment, LibraryDatabase, Computers, Jobs } from "./co
 import { Navbar } from "./components";
 import "./app.css";
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 //!BACKEND
 // function RequireAuth({ children }) {
 // 	const { authed } = useAuth();

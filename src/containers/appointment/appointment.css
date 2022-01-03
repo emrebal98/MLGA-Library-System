@@ -1,0 +1,5 @@
+.Appointment {
+    display: flex;
+    flex-direction: col;
+    background-color: aqua;
+}

@@ -2,7 +2,7 @@ import React from "react";
 import "./appointment.css";
 
 function Appointment() {
-	return <div>Appointment</div>;
+	return <div className="Appointment">My Appointments</div>;
 }
 
 export default Appointment;

@@ -1,3 +1,8 @@
+.table_container {
+	position: relative;
+	height: 630px;
+}
+
 .table {
 	border-collapse: collapse;
 	width: 100%;
@@ -21,4 +26,29 @@
 
 .center_selected {
 	padding-left: 1.5rem !important;
+}
+
+.pagination {
+	/* background: red; */
+	display: flex;
+	align-items: center;
+	justify-content: end;
+	padding: 0.5rem 1rem 0.5rem 0;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+}
+.pagination_label {
+	font-size: 1.2rem;
+	font-weight: 300;
+	margin-right: 0.5rem;
+}
+.pagination__button {
+	cursor: pointer;
+	font-size: 1.7rem;
+	line-height: 1.7rem;
+}
+.pagination__button.disabled {
+	cursor: default;
+	color: #aeaeae;
 }

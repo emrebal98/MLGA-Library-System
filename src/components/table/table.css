@@ -1,0 +1,24 @@
+.table {
+	border-collapse: collapse;
+	width: 100%;
+	border: 1px solid #ddd;
+	font-size: 18px;
+}
+
+.table th,
+.table td {
+	text-align: left;
+	padding: 12px;
+}
+
+.table tr {
+	border-bottom: 1px solid #ddd;
+}
+
+.table tr.header {
+	background-color: #f1f1f1;
+}
+
+.center_selected {
+	padding-left: 1.5rem !important;
+}

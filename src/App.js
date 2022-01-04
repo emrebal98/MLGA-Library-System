@@ -1,10 +1,16 @@
 import * as React from "react";
-import { Routes, Route /*Navigate, useLocation */ } from "react-router-dom";
+import { Routes, Route /*Navigate*/, useLocation } from "react-router-dom";
 // import useAuth, { AuthProvider } from "./useAuth";
-import { Login, Home, Appointment, LibraryDatabase, Computers, Jobs } from "./containers";
+import {
+	Login,
+	Home,
+	Appointment,
+	LibraryDatabase,
+	Computers,
+	Jobs,
+} from "./containers";
 import { Navbar } from "./components";
 import "./app.css";
-
 
 //!BACKEND
 // function RequireAuth({ children }) {
@@ -15,11 +21,13 @@ import "./app.css";
 // }
 
 export default function App() {
+	const location = useLocation();
+	console.log(location);
 	return (
 		// <AuthProvider>
 		<>
-			<Navbar />
-			<section class="home-section">
+			{location.pathname != "/" && <Navbar />}
+			<section class={location.pathname === "/" ? "login-section" : "home-section"}>
 				<Routes>
 					<Route path="/" element={<Login />} />
 

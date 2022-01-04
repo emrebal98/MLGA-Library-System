@@ -1,0 +1,18 @@
+.check_box {
+	cursor: pointer;
+	background: #f1f1f1;
+	width: 2rem;
+	height: 2rem;
+	border-radius: 0.4rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.check_box__icon {
+	color: var(--sidebar-primary-color);
+	font-size: 2rem;
+}
+.check_box:hover {
+	background: #cccccc;
+}

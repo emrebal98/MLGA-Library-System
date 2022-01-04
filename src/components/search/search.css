@@ -1,0 +1,33 @@
+.search__field {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: #f6f6f6;
+	border-radius: 0.5rem;
+	padding: 0 1rem;
+	/* outline: 1px solid red; */
+}
+
+.search__field.focus {
+	background-color: white;
+	outline: 1px solid #aeaeae;
+}
+
+.searh__field__icon {
+	position: sticky;
+	top: 0.6rem;
+	font-size: 32px;
+	color: #7d7d7d;
+	/* text-align: center; */
+	margin-right: 1rem;
+}
+.search__field input {
+	background: transparent;
+	font-size: 21px;
+	line-height: 56px;
+	height: 56px;
+	width: 100%;
+	border: none;
+	box-shadow: none;
+	outline: none;
+}

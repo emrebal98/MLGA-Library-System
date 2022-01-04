@@ -1,46 +1,44 @@
 import React, { useState } from "react";
+import { Table } from "../../components";
 import "./librarydatabase.css";
 
 function LibraryDatabase() {
-  const allItems = [
-    { name: "Alfreds Futterkiste", country: "Germany" },
-    { name: "zxc Futterkiste", country: "Germany" },
-    { name: "fdsfds Futterkiste", country: "Germany" },
-  ];
-  const [items, setItems] = useState(allItems);
-  const [searchText, setSearchText] = useState();
+	const allItems = [
+		{
+			bookName: "Book name1",
+			genre: "asd",
+			author: "kljh",
+			publisher: "data",
+			availability: true,
+		},
+		{
+			bookName: "Book name2",
+			genre: "fds",
+			author: "vcx",
+			publisher: "data",
+			availability: true,
+		},
+		{
+			bookName: "Book name3",
+			genre: "hgf",
+			author: "kjh",
+			publisher: "data",
+			availability: true,
+		},
+	];
+	const [selectedItems, setSelectedItems] = useState([]);
 
-  function handleSearch() {   
-    setItems(allItems.filter((f) => f.name.includes(searchText)));
-  }
-
-  return (
-    <div className="LibraryDatabase">
-      <h2>My Customers</h2>
-
-      <input
-        type="text"
-        id="myInput"
-        onKeyUp={handleSearch}
-        placeholder="Search..."
-        onChange={(e) => setSearchText(e.target.value)}
-      />
-
-      <table id="myTable">
-        <tr class="header">
-          <th>Name</th>
-          <th>Country</th>
-        </tr>
-
-        {items.map((item) => (
-          <tr>
-            <td>{item.name}</td>
-            <td>{item.country}</td>
-          </tr>
-        ))}
-      </table>
-    </div>
-  );
+	return (
+		<div className="LibraryDatabase">
+			<Table
+				checkBox={true}
+				selectedItems={selectedItems}
+				setSelectedItems={setSelectedItems}
+				allItems={allItems}
+				titles={Object.keys(allItems[0])}
+			/>
+		</div>
+	);
 }
 
 export default LibraryDatabase;

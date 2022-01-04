@@ -26,7 +26,7 @@ export default function App() {
 	return (
 		// <AuthProvider>
 		<>
-			{location.pathname != "/" && <Navbar />}
+			{location.pathname !== "/" && <Navbar />}
 			<section class={location.pathname === "/" ? "login-section" : "home-section"}>
 				<Routes>
 					<Route path="/" element={<Login />} />

@@ -9,34 +9,163 @@ function LibraryDatabase() {
 			genre: "asd",
 			author: "kljh",
 			publisher: "data",
-			availability: true,
+			availability: "true",
 		},
 		{
 			bookName: "Book name2",
 			genre: "fds",
 			author: "vcx",
 			publisher: "data",
-			availability: true,
+			availability: "true",
 		},
 		{
 			bookName: "Book name3",
 			genre: "hgf",
 			author: "kjh",
 			publisher: "data",
-			availability: true,
+			availability: "true",
+		},
+		{
+			bookName: "Book name2",
+			genre: "fds",
+			author: "vcx",
+			publisher: "data",
+			availability: "true",
+		},
+		{
+			bookName: "Book name3",
+			genre: "hgf",
+			author: "kjh",
+			publisher: "data",
+			availability: "true",
+		},
+		{
+			bookName: "Book name2",
+			genre: "fds",
+			author: "vcx",
+			publisher: "data",
+			availability: "true",
+		},
+		{
+			bookName: "Book name3",
+			genre: "hgf",
+			author: "kjh",
+			publisher: "data",
+			availability: "true",
+		},
+		{
+			bookName: "Book name2",
+			genre: "fds",
+			author: "vcx",
+			publisher: "data",
+			availability: "true",
+		},
+		{
+			bookName: "Book name3",
+			genre: "hgf",
+			author: "kjh",
+			publisher: "data",
+			availability: "true",
+		},
+		{
+			bookName: "Book name10",
+			genre: "fds",
+			author: "vcx",
+			publisher: "data",
+			availability: "true",
+		},
+		{
+			bookName: "Book nameLAST",
+			genre: "hgf",
+			author: "kjh",
+			publisher: "data",
+			availability: "true",
+		},
+		{
+			bookName: "Book nameLAST",
+			genre: "hgf",
+			author: "kjh",
+			publisher: "data",
+			availability: "true",
+		},
+		{
+			bookName: "Book nameLAST",
+			genre: "hgf",
+			author: "kjh",
+			publisher: "data",
+			availability: "true",
+		},
+		{
+			bookName: "Book nameLAST",
+			genre: "hgf",
+			author: "kjh",
+			publisher: "data",
+			availability: "true",
+		},
+		{
+			bookName: "Book nameLAST",
+			genre: "hgf",
+			author: "kjh",
+			publisher: "data",
+			availability: "true",
+		},
+		{
+			bookName: "Book nameLAST",
+			genre: "hgf",
+			author: "kjh",
+			publisher: "data",
+			availability: "true",
+		},
+		{
+			bookName: "Book nameLAST",
+			genre: "hgf",
+			author: "kjh",
+			publisher: "data",
+			availability: "true",
+		},
+		{
+			bookName: "Book nameLAST",
+			genre: "hgf",
+			author: "kjh",
+			publisher: "data",
+			availability: "true",
+		},
+		{
+			bookName: "Book nameLAST",
+			genre: "hgf",
+			author: "kjh",
+			publisher: "data",
+			availability: "true",
+		},
+		{
+			bookName: "Book nameLAST",
+			genre: "hgf",
+			author: "kjh",
+			publisher: "data",
+			availability: "true",
+		},
+		{
+			bookName: "Book 21",
+			genre: "hgf",
+			author: "kjh",
+			publisher: "data",
+			availability: "true",
 		},
 	];
 	const [selectedItems, setSelectedItems] = useState([]);
 
 	return (
-		<div className="LibraryDatabase">
-			<Table
-				checkBox={true}
-				selectedItems={selectedItems}
-				setSelectedItems={setSelectedItems}
-				allItems={allItems}
-				titles={Object.keys(allItems[0])}
-			/>
+		<div className="library_database">
+			<h1>Library Database</h1>
+			<div className="table_area">
+				<Table
+					checkBox={false}
+					selectedItems={selectedItems}
+					setSelectedItems={setSelectedItems}
+					allItems={allItems}
+					titles={Object.keys(allItems[0])}
+				/>
+			</div>
 		</div>
 	);
 }

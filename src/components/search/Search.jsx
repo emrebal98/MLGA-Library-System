@@ -3,7 +3,7 @@ import { AiOutlineSearch } from "react-icons/ai";
 import { Filter } from "../";
 import "./search.css";
 
-function Search({ activeSet, setItems, titles }) {
+function Search({ activeSet, setItems, titles, onSearch }) {
 	const [search, setSearch] = useState();
 	const [focus, setFocus] = useState(false);
 	const [filter, setFilter] = useState(titles[0]);
@@ -26,6 +26,8 @@ function Search({ activeSet, setItems, titles }) {
 				f[filter].toLowerCase().includes(search.toLowerCase())
 			)
 		);
+
+		onSearch(search);
 	}
 
 	return (

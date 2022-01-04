@@ -1,5 +1,11 @@
-/* .LibraryDatabase {
-    display: flex;
-    flex-direction: col;
-} */
+.library_database {
+	padding: 2rem;
+}
 
+.library_database h1 {
+	margin-bottom: 5rem;
+	padding: 0 2rem;
+}
+.table_area {
+	padding: 6rem 2rem;
+}

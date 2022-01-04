@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-// import { useNavigate, Navigate, useLocation } from "react-router-dom";
+import { useNavigate /* Navigate, useLocation */ } from "react-router-dom";
 // import useAuth from "../../useAuth";
 import "./login.css";
 
 function Login() {
-	// const navigate = useNavigate();
+	const navigate = useNavigate();
 	// const { authed, login } = useAuth();
 	// const { state } = useLocation();
 	const [inputs, setInputs] = useState({});
@@ -28,6 +28,7 @@ function Login() {
 		e.preventDefault();
 		//?TEMP
 		setError("Waiting for backend");
+		navigate("/home");
 		//Login auth
 		// login(inputs.username, inputs.password)
 		// 	.then((res) => {
@@ -49,11 +50,21 @@ function Login() {
 			<form onSubmit={handleLogin}>
 				<label>
 					Username
-					<input type="text" name="username" value={inputs.username || ""} onChange={handleChange} />
+					<input
+						type="text"
+						name="username"
+						value={inputs.username || ""}
+						onChange={handleChange}
+					/>
 				</label>
 				<label>
 					Password
-					<input type="password" name="password" value={inputs.password || ""} onChange={handleChange} />
+					<input
+						type="password"
+						name="password"
+						value={inputs.password || ""}
+						onChange={handleChange}
+					/>
 				</label>
 				<input type="submit" value="Login" />
 			</form>

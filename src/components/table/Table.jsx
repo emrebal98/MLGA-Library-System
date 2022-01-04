@@ -79,6 +79,32 @@ function Table({
 				titles={titles}
 				onSearch={handleOnSearch}
 			/>
+			<div className="pagination">
+				<p className="pagination_label">
+					{onSearch ? 0 : page.start}-
+					{onSearch ? items.length : page.end} of {allItems.length}
+				</p>
+				<div
+					className={
+						disable.left
+							? "pagination__button disabled"
+							: "pagination__button"
+					}
+					onClick={handlePreviousPage}
+				>
+					<IoIosArrowBack />
+				</div>
+				<div
+					className={
+						disable.right
+							? "pagination__button disabled"
+							: "pagination__button"
+					}
+					onClick={handleNextPage}
+				>
+					<IoIosArrowForward />
+				</div>
+			</div>
 			<div className="table_container">
 				<table className="table">
 					<tr class="header">
@@ -132,33 +158,6 @@ function Table({
 								</tr>
 						  ))}
 				</table>
-				<div className="pagination">
-					<p className="pagination_label">
-						{onSearch ? 0 : page.start}-
-						{onSearch ? items.length : page.end} of{" "}
-						{allItems.length}
-					</p>
-					<div
-						className={
-							disable.left
-								? "pagination__button disabled"
-								: "pagination__button"
-						}
-						onClick={handlePreviousPage}
-					>
-						<IoIosArrowBack />
-					</div>
-					<div
-						className={
-							disable.right
-								? "pagination__button disabled"
-								: "pagination__button"
-						}
-						onClick={handleNextPage}
-					>
-						<IoIosArrowForward />
-					</div>
-				</div>
 			</div>
 		</>
 	);

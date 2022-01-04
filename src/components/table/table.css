@@ -35,9 +35,6 @@
 	align-items: center;
 	justify-content: end;
 	padding: 0.5rem 1rem 0.5rem 0;
-	position: sticky;
-	right: 0;
-	bottom: 0;
 }
 .pagination_label {
 	font-size: 1.2rem;

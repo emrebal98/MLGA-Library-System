@@ -4,7 +4,7 @@ import { Notification } from "../../helper/notfiy";
 import "./librarydatabase.css";
 
 function LibraryDatabase() {
-	const randomTexts = Array.apply(null, Array(11)).map(function () {
+	const randomTexts = Array.apply(null, Array(21)).map(function () {
 		return Array.apply(null, Array(~~(Math.random() * 10 + 3)))
 			.map(function () {
 				return String.fromCharCode(Math.random() * (123 - 97) + 97);

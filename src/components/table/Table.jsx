@@ -23,12 +23,30 @@ function Table({
 	);
 	const [onSearch, setOnSearch] = useState(false);
 
+	//Calls when allItems change
 	useEffect(() => {
 		setItems(allItems);
-		if (allItems.length > increment)
-			setDisable({ left: true, right: false });
-		else setDisable({ left: true, right: true });
+		//If there is no item after deleting go previous page
+		if (page.start === allItems.length) handlePreviousPage();
 	}, [allItems]);
+
+	//Calls when page or allItems change
+	useEffect(() => {
+		//Refresh page button states
+		refreshPageButtonStates();
+	}, [page, allItems]);
+
+	//Refresh page button states
+	function refreshPageButtonStates() {
+		if (allItems.length > increment) {
+			if (page.start === 0) setDisable({ left: true, right: false });
+			else if (allItems.length - page.start <= increment)
+				setDisable({ left: false, right: true });
+			else setDisable({ left: false, right: false });
+		} else {
+			setDisable({ left: true, right: true });
+		}
+	}
 
 	function handleChecked(state, item) {
 		let check = state;
@@ -51,20 +69,9 @@ function Table({
 		let startN = page.start - increment;
 		let endN = page.end - increment;
 		if (startN < 0) return;
-		setPage({ start: startN, end: endN });
-		//Activate the next button if it is not the last page
-		if (endN < items.length)
-			setDisable((prevState) => {
-				return { left: prevState.left, right: false };
-			});
-		//Disable the previous button if it is the first page
-		if (startN < increment)
-			setDisable((prevState) => {
-				return {
-					right: prevState.right,
-					left: true,
-				};
-			});
+		setPage((prevState) => {
+			return { ...prevState, start: startN, end: endN };
+		});
 	}
 
 	function handleNextPage(e) {
@@ -77,19 +84,6 @@ function Table({
 		let endN = page.end + increment;
 		if (endN - items.length >= increment) return;
 		setPage({ start: startN, end: endN });
-		//Activate the previous button if it is not the firt page
-		if (startN >= increment)
-			setDisable((prevState) => {
-				return {
-					right: prevState.right,
-					left: false,
-				};
-			});
-		//Disable the next button if it is the last page
-		if (endN >= items.length)
-			setDisable((prevState) => {
-				return { left: prevState.left, right: true };
-			});
 	}
 
 	function handleOnSearch(search) {
@@ -102,13 +96,7 @@ function Table({
 			setCheckedClear(!checkedClear);
 		} else {
 			setOnSearch(false);
-			//If left on first page before search
-			if (page.start === 0) setDisable({ left: true, right: false });
-			//If left on between page before search
-			else if (page.end >= allItems.length)
-				setDisable({ left: false, right: true });
-			//If left on last page before search
-			else setDisable({ left: false, right: false });
+			refreshPageButtonStates();
 		}
 	}
 

@@ -9,14 +9,16 @@ function Table({
 	checkBox = false,
 	selectedItems,
 	setSelectedItems,
+	search = true,
 }) {
 	const [items, setItems] = useState(allItems);
 	const [page, setPage] = useState({ start: 0, end: 10 });
 	const [disable, setDisable] = useState({ left: true, right: false });
 	const [onSearch, setOnSearch] = useState(false);
+	const [checkedClear, setCheckedClear] = useState(false);
 	const increment = 10;
+
 	function handleChecked(state, item) {
-		console.log(state);
 		let check = state;
 		if (check === true) {
 			//add the selected item to the selected array
@@ -31,6 +33,9 @@ function Table({
 	function handlePreviousPage(e) {
 		//If button disable do not click
 		if (disable.left) return;
+		//Clear selected items if any
+		setSelectedItems([]);
+		setCheckedClear(!checkedClear);
 		let startN = page.start - increment;
 		let endN = page.end - increment;
 		if (startN < 0) return;
@@ -44,6 +49,9 @@ function Table({
 	function handleNextPage(e) {
 		//If button disable do not click
 		if (disable.right) return;
+		//Clear selected items if any
+		setSelectedItems([]);
+		setCheckedClear(!checkedClear);
 		let startN = page.start + increment;
 		let endN = page.end + increment;
 		if (endN - items.length >= increment) return;
@@ -59,6 +67,9 @@ function Table({
 			setOnSearch(true);
 			//Disable page button while searching
 			setDisable({ left: true, right: true });
+			//Clear selected items if any
+			setSelectedItems([]);
+			setCheckedClear(!checkedClear);
 		} else {
 			setOnSearch(false);
 			//If left on first page before search
@@ -73,12 +84,14 @@ function Table({
 
 	return (
 		<>
-			<Search
-				activeSet={allItems}
-				setItems={setItems}
-				titles={titles}
-				onSearch={handleOnSearch}
-			/>
+			{search && (
+				<Search
+					activeSet={allItems}
+					setItems={setItems}
+					titles={titles}
+					onSearch={handleOnSearch}
+				/>
+			)}
 			<div className="pagination">
 				<p className="pagination_label">
 					{onSearch ? 0 : page.start}-
@@ -133,6 +146,7 @@ function Table({
 												onChange={(state) =>
 													handleChecked(state, item)
 												}
+												value={checkedClear}
 											/>
 										</td>
 									)}
@@ -149,6 +163,7 @@ function Table({
 												onChange={(state) =>
 													handleChecked(state, item)
 												}
+												value={checkedClear}
 											/>
 										</td>
 									)}

@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { BsCheck } from "react-icons/bs";
 import "./checkbox.css";
 
-function Checkbox({ onChange }) {
+function Checkbox({ onChange, value }) {
 	const [checked, setChecked] = useState(false);
 
 	function handleClick(e) {
@@ -15,6 +15,10 @@ function Checkbox({ onChange }) {
 		}
 		// setChecked(!checked);
 	}
+
+	useEffect(() => {
+		setChecked(false);
+	}, [value]);
 
 	return (
 		<div className="check_box" onClick={handleClick}>

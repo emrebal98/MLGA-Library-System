@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Table, Popup } from "../../components";
+import { Notification } from "../../helper/notfiy";
 import "./librarydatabase.css";
 
 function LibraryDatabase() {
@@ -174,6 +175,12 @@ function LibraryDatabase() {
 			edit: false,
 			delete: false,
 		});
+
+		//?Notification examples
+		Notification.success("Sucess Message");
+		Notification.error("Error Message");
+		Notification.info("Info Message");
+		Notification.warning("Warning message");
 	}
 
 	return (

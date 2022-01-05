@@ -11,6 +11,8 @@ import {
 } from "./containers";
 import { Navbar } from "./components";
 import "./app.css";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 //!BACKEND
 // function RequireAuth({ children }) {
@@ -27,7 +29,11 @@ export default function App() {
 		// <AuthProvider>
 		<>
 			{location.pathname !== "/" && <Navbar />}
-			<section class={location.pathname === "/" ? "login-section" : "home-section"}>
+			<section
+				class={
+					location.pathname === "/" ? "login-section" : "home-section"
+				}
+			>
 				<Routes>
 					<Route path="/" element={<Login />} />
 
@@ -72,6 +78,7 @@ export default function App() {
 						}
 					/>
 				</Routes>
+				<ToastContainer />
 			</section>
 			{/* </AuthProvider> */}
 		</>

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Table } from "../../components";
+import { Table, Popup } from "../../components";
 import "./librarydatabase.css";
 
 function LibraryDatabase() {
@@ -153,21 +153,87 @@ function LibraryDatabase() {
 		},
 	];
 	const [selectedItems, setSelectedItems] = useState([]);
+	/**
+	 * false = Student
+	 * true = Librarian
+	 */
+	const [user, setUser] = useState(false);
+	const [show, setShow] = useState({
+		create: false,
+		edit: false,
+		delete: false,
+	});
+
+	function handleShow(type) {
+		setShow({ ...show, [type]: true });
+	}
+
+	function handleClose(e) {
+		setShow({
+			create: false,
+			edit: false,
+			delete: false,
+		});
+	}
 
 	return (
-		<div className="library_database">
-			<h1>Library Database</h1>
-			<div className="table_area">
-				<Table
-					checkBox={false}
-					search={true}
-					selectedItems={selectedItems}
-					setSelectedItems={setSelectedItems}
-					allItems={allItems}
-					titles={Object.keys(allItems[0])}
-				/>
+		<>
+			<div className="library_database">
+				<h1>Library Database</h1>
+
+				{/* TEMP CODE START*/}
+				<span>Student </span>
+				<label class="switch">
+					<input
+						type="checkbox"
+						onChange={(e) => setUser(e.target.checked)}
+					/>
+					<span class="slider round"></span>
+				</label>
+				<span> Librarian</span>
+				{/* TEMP CODE END*/}
+
+				<div className="table_area">
+					{user && (
+						<div className="button_area">
+							<button onClick={(e) => handleShow("create")}>
+								Create
+							</button>
+							<button onClick={(e) => handleShow("edit")}>
+								Edit
+							</button>
+							<button onClick={(e) => handleShow("delete")}>
+								Delete
+							</button>
+						</div>
+					)}
+
+					<Table
+						checkBox={user}
+						search={true}
+						selectedItems={selectedItems}
+						setSelectedItems={setSelectedItems}
+						allItems={allItems}
+						titles={Object.keys(allItems[0])}
+					/>
+				</div>
 			</div>
-		</div>
+			{show.create && (
+				<Popup close={handleClose}>
+					<h1>Create</h1>
+				</Popup>
+			)}
+			{show.edit && (
+				<Popup close={handleClose}>
+					<h1>Edit</h1>
+				</Popup>
+			)}
+			{show.delete && (
+				<Popup close={handleClose}>
+					<h1>Delete</h1>
+				</Popup>
+			)}
+		</>
 	);
 }
 

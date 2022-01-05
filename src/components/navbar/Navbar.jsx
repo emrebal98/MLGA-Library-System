@@ -29,7 +29,7 @@ function Navbar() {
 					</div>
 					<div className="logo_name">MLGA</div>
 					<div className="r-icon" id="btn" onClick={toggleMenu}>
-						{open ? <BiMenu /> : <BiMenuAltRight />}
+						{!open ? <BiMenu /> : <BiMenuAltRight />}
 					</div>
 				</div>
 				<ul className="nav-list">

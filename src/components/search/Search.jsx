@@ -6,7 +6,7 @@ import "./search.css";
 function Search({ activeSet, setItems, titles, onSearch }) {
 	const [search, setSearch] = useState();
 	const [focus, setFocus] = useState(false);
-	const [filter, setFilter] = useState(titles[0]);
+	const [filter, setFilter] = useState(titles[1]);
 
 	function handleFocus(e) {
 		setFocus(true);

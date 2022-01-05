@@ -39,14 +39,20 @@ function Filter({ titles, filter, setFilter }) {
 				}
 			>
 				<ul>
-					{titles.map((f, index) => (
-						<li key={index} onClick={(e) => handleSelect(f)}>
-							{f
-								.replace(/([A-Z])/g, " $1")
-								.trim()
-								.toUpperCase()}
-						</li>
-					))}
+					{titles.map(
+						(f, index) =>
+							f !== "id" && (
+								<li
+									key={index}
+									onClick={(e) => handleSelect(f)}
+								>
+									{f
+										.replace(/([A-Z])/g, " $1")
+										.trim()
+										.toUpperCase()}
+								</li>
+							)
+					)}
 				</ul>
 			</div>
 		</div>

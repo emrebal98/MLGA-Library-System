@@ -4,155 +4,28 @@ import { Notification } from "../../helper/notfiy";
 import "./librarydatabase.css";
 
 function LibraryDatabase() {
-	const allItems = [
-		{
-			bookName: "Book name1",
-			genre: "asd",
-			author: "kljh",
-			publisher: "data",
-			availability: "true",
-		},
-		{
-			bookName: "Book name2",
-			genre: "fds",
-			author: "vcx",
-			publisher: "data",
-			availability: "true",
-		},
-		{
-			bookName: "Book name3",
-			genre: "hgf",
-			author: "kjh",
-			publisher: "data",
-			availability: "true",
-		},
-		{
-			bookName: "Book name2",
-			genre: "fds",
-			author: "vcx",
-			publisher: "data",
-			availability: "true",
-		},
-		{
-			bookName: "Book name3",
-			genre: "hgf",
-			author: "kjh",
-			publisher: "data",
-			availability: "true",
-		},
-		{
-			bookName: "Book name2",
-			genre: "fds",
-			author: "vcx",
-			publisher: "data",
-			availability: "true",
-		},
-		{
-			bookName: "Book name3",
-			genre: "hgf",
-			author: "kjh",
-			publisher: "data",
-			availability: "true",
-		},
-		{
-			bookName: "Book name2",
-			genre: "fds",
-			author: "vcx",
-			publisher: "data",
-			availability: "true",
-		},
-		{
-			bookName: "Book name3",
-			genre: "hgf",
-			author: "kjh",
-			publisher: "data",
-			availability: "true",
-		},
-		{
-			bookName: "Book name10",
-			genre: "fds",
-			author: "vcx",
-			publisher: "data",
-			availability: "true",
-		},
-		{
-			bookName: "Book nameLAST",
-			genre: "hgf",
-			author: "kjh",
-			publisher: "data",
-			availability: "true",
-		},
-		{
-			bookName: "Book nameLAST",
-			genre: "hgf",
-			author: "kjh",
-			publisher: "data",
-			availability: "true",
-		},
-		{
-			bookName: "Book nameLAST",
-			genre: "hgf",
-			author: "kjh",
-			publisher: "data",
-			availability: "true",
-		},
-		{
-			bookName: "Book nameLAST",
-			genre: "hgf",
-			author: "kjh",
-			publisher: "data",
-			availability: "true",
-		},
-		{
-			bookName: "Book nameLAST",
-			genre: "hgf",
-			author: "kjh",
-			publisher: "data",
-			availability: "true",
-		},
-		{
-			bookName: "Book nameLAST",
-			genre: "hgf",
-			author: "kjh",
-			publisher: "data",
-			availability: "true",
-		},
-		{
-			bookName: "Book nameLAST",
-			genre: "hgf",
-			author: "kjh",
-			publisher: "data",
-			availability: "true",
-		},
-		{
-			bookName: "Book nameLAST",
-			genre: "hgf",
-			author: "kjh",
-			publisher: "data",
-			availability: "true",
-		},
-		{
-			bookName: "Book nameLAST",
-			genre: "hgf",
-			author: "kjh",
-			publisher: "data",
-			availability: "true",
-		},
-		{
-			bookName: "Book nameLAST",
-			genre: "hgf",
-			author: "kjh",
-			publisher: "data",
-			availability: "true",
-		},
-		{
-			bookName: "Book 21",
-			genre: "hgf",
-			author: "kjh",
-			publisher: "data",
-			availability: "true",
-		},
-	];
+	const randomTexts = Array.apply(null, Array(11)).map(function () {
+		return Array.apply(null, Array(~~(Math.random() * 10 + 3)))
+			.map(function () {
+				return String.fromCharCode(Math.random() * (123 - 97) + 97);
+			})
+			.join("");
+	});
+
+	const createRandomItems = () =>
+		randomTexts.map((item, index) => {
+			return {
+				id: index,
+				bookName: `${item} book`,
+				genre: `${item} genre`,
+				author: `${item} author`,
+				publisher: `${item} data`,
+				availability: Math.random() > 0.5 ? "true" : "false",
+			};
+		});
+
+	const [allItems, setAllItems] = useState(createRandomItems());
+
 	const [selectedItems, setSelectedItems] = useState([]);
 	/**
 	 * false = Student
@@ -162,8 +35,8 @@ function LibraryDatabase() {
 	const [show, setShow] = useState({
 		create: false,
 		edit: false,
-		delete: false,
 	});
+	const [checkedClear, setCheckedClear] = useState(false);
 
 	function handleShow(type) {
 		setShow({ ...show, [type]: true });
@@ -181,6 +54,20 @@ function LibraryDatabase() {
 		Notification.error("Error Message");
 		Notification.info("Info Message");
 		Notification.warning("Warning message");
+	}
+
+	function handleDelete(e) {
+		//Delete selected elements from the allItems list
+		setAllItems(allItems.filter((f) => !selectedItems.includes(f)));
+		//Show message
+		Notification.info(
+			`${selectedItems.length} item${
+				selectedItems.length > 1 ? "s" : ""
+			} deleted.`
+		);
+		//Clear selected items if any
+		setSelectedItems([]);
+		setCheckedClear((prevState) => !prevState);
 	}
 
 	return (
@@ -209,9 +96,7 @@ function LibraryDatabase() {
 							<button onClick={(e) => handleShow("edit")}>
 								Edit
 							</button>
-							<button onClick={(e) => handleShow("delete")}>
-								Delete
-							</button>
+							<button onClick={handleDelete}>Delete</button>
 						</div>
 					)}
 
@@ -222,6 +107,8 @@ function LibraryDatabase() {
 						setSelectedItems={setSelectedItems}
 						allItems={allItems}
 						titles={Object.keys(allItems[0])}
+						checkedClear={checkedClear}
+						setCheckedClear={setCheckedClear}
 					/>
 				</div>
 			</div>
@@ -233,11 +120,6 @@ function LibraryDatabase() {
 			{show.edit && (
 				<Popup close={handleClose}>
 					<h1>Edit</h1>
-				</Popup>
-			)}
-			{show.delete && (
-				<Popup close={handleClose}>
-					<h1>Delete</h1>
 				</Popup>
 			)}
 		</>

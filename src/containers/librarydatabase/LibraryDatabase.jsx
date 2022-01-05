@@ -160,6 +160,7 @@ function LibraryDatabase() {
 			<div className="table_area">
 				<Table
 					checkBox={false}
+					search={true}
 					selectedItems={selectedItems}
 					setSelectedItems={setSelectedItems}
 					allItems={allItems}

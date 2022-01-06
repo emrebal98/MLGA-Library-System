@@ -113,7 +113,7 @@ function Jobs() {
 			{show.create && (
 				<Popup close={handleClose}>
 					<div className="create_job">
-						<h1 className="book_header">Create a New Job Posting</h1>
+						<h1>Create New Job Posting</h1>
 						<form>
 							<label>
 							Job Name: <br />
@@ -126,14 +126,30 @@ function Jobs() {
   							</textarea>
 							</label>
 							<br />
-							<input type="submit" value="Submit"/>
+							<input type="submit" value="Post"/>
 						</form>
 					</div>
 				</Popup>
 			)}
 			{show.edit && (
 				<Popup close={handleClose}>
-					<h1>Edit</h1>
+					<div className="edit_job">
+						<h1>Edit Job Posting</h1>
+						<form>
+							<label>
+							Job Name: <br />
+							<input type="text" name="name"/>
+							</label>
+							<br />
+							<label>
+							Job Description: <br />
+							<textarea id="w3review" name="w3review" rows="4" cols="50">
+  							</textarea>
+							</label>
+							<br />
+							<input type="submit" value="Edit"/>
+						</form>
+					</div>
 				</Popup>
 			)}
 		</>

@@ -3,6 +3,7 @@ import { Table, Popup } from "../../components";
 import { Notification } from "../../helper/notfiy";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import DateTimePicker from "react-datetime-picker";
+import { IoChevronBack } from "react-icons/io5";
 import moment from "moment";
 import "./appointment.css";
 import "react-tabs/style/react-tabs.css";
@@ -268,6 +269,12 @@ function Appointment() {
 					</div>
 				) : (
 					<div className="create_appointment_container">
+						<button
+							className="back"
+							onClick={(e) => setAppointmentPage(false)}
+						>
+							<IoChevronBack /> <span>Back</span>
+						</button>
 						<Tabs>
 							<TabList>
 								<Tab>Library</Tab>

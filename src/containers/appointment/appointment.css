@@ -258,3 +258,18 @@ form textarea {
 .submit__button:hover {
 	background: #07b747;
 }
+
+.create_appointment_container .back {
+	border: none;
+	background-color: unset;
+	font-size: 2rem;
+	padding: 0.2rem;
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.create_appointment_container .back span {
+	font-size: 1rem;
+}

@@ -173,3 +173,51 @@ input:checked + .slider:before {
 	cursor: pointer;
 	margin: 1rem;
 }
+
+.form__container {
+	/* width: fit-content; */
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.input__field {
+	display: flex;
+	flex-direction: column;
+	/* width: 80%; */
+}
+form {
+	margin: 0 1.5rem;
+}
+
+form div {
+	margin-top: 1rem;
+}
+
+form textarea {
+	resize: vertical;
+	width: 300px;
+}
+
+.submit_button__container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.submit__button {
+	border: none;
+	background-color: unset;
+	width: 10rem;
+	padding: 0.5rem 1rem;
+	margin: 0.3rem;
+	border-radius: 1rem;
+	cursor: pointer;
+	color: white;
+	background: #08dd55;
+}
+
+.submit__button:hover {
+	background: #07b747;
+}

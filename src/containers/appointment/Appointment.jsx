@@ -175,7 +175,7 @@ function Appointment() {
 	return (
 		<>
 			<div className="Appointment">
-				<h1>My Appointments</h1>
+				<h1>Appointment</h1>
 				{/* TEMP CODE START*/}
 				<span>Student </span>
 				<label class="switch">
@@ -192,9 +192,9 @@ function Appointment() {
 						{user && (
 							<div className="button_area">
 								<button onClick={(e) => handleShow("Sanction")}>
-									Sanction
+									Apply a Sanction
 								</button>
-								<button onClick={handleDelete}>Delete</button>
+								<button onClick={handleDelete}>Cancel the Appointment</button>
 							</div>
 						)}
 
@@ -206,9 +206,9 @@ function Appointment() {
 									Make an Appointment
 								</button>
 								<button onClick={(e) => handleShow("edit")}>
-									Edit
+									Change in Appointment
 								</button>
-								<button onClick={handleDelete}>Cancel</button>
+								<button onClick={handleDelete}>Cancel the Appointment</button>
 							</div>
 						)}
 
@@ -227,8 +227,8 @@ function Appointment() {
 					<div className="create_appointment_container">
 						<Tabs>
 							<TabList>
-								<Tab>Title 1</Tab>
-								<Tab>Title 2</Tab>
+								<Tab>Library</Tab>
+								<Tab>Group Work Areas</Tab>
 							</TabList>
 
 							<TabPanel>
@@ -266,7 +266,24 @@ function Appointment() {
 			)}
 			{show.edit && (
 				<Popup close={handleClose}>
-					<h1>Edit</h1>
+					<div className="form__container">
+						<h1>Make a Change in Appointment</h1>
+						<form>
+							<div className="input__field">
+								<select>
+									<option value="shorten">Shorten the Appointment</option>
+									<option value="extend">Extend the Appointment</option>
+								</select>
+							</div>
+							<div className="submit_button__container">
+								<input
+									className="submit__button"
+									type="submit"
+									value="Change"
+								/>
+							</div>
+						</form>
+					</div>
 				</Popup>
 			)}
 			{show.next && (

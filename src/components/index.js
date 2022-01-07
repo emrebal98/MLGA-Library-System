@@ -4,3 +4,4 @@ export { default as Filter } from "./filter/Filter";
 export { default as Search } from "./search/Search";
 export { default as Checkbox } from "./checkbox/Checkbox";
 export { default as Popup } from "./popup/Popup";
+export { default as Card } from "./card/Card";

@@ -6,15 +6,15 @@
 	margin-bottom: 5rem;
 	padding: 0 2rem;
 }
-.table_area {
+.Appointment .table_area {
 	padding: 6rem 2rem;
 }
 
-.table_area .button_area {
+.Appointment .table_area .button_area {
 	margin-bottom: 1.5rem;
 }
 
-.table_area .button_area button {
+.Appointment .table_area .button_area button {
 	border: none;
 	background-color: unset;
 	padding: 0.5rem 1rem;
@@ -24,19 +24,25 @@
 	color: white;
 }
 
-.table_area .button_area button:nth-child(1) {
-	background: #940101;
+.Appointment .table_area .button_area .create__button {
+	background: #08dd55;
 }
 
-.table_area .button_area button:nth-child(1):hover {
-	background: #940101;
+.Appointment .table_area .button_area .create__button:hover {
+	background: #07b747;
 }
 
-.table_area .button_area button:nth-child(2) {
+.Appointment .table_area .button_area .edit__button {
+	background: #107bff;
+}
+
+.Appointment .table_area .button_area .edit__button:hover {
+	background: #106bff;
+}
+.Appointment .table_area .button_area .delete__button {
 	background: #f90204;
 }
-
-.table_area .button_area button:nth-child(2):hover {
+.Appointment .table_area .button_area .delete__button:hover {
 	background: #c50103;
 }
 

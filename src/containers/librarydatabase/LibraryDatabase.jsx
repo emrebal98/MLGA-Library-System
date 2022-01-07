@@ -16,7 +16,8 @@ function LibraryDatabase() {
 		randomTexts.map((item, index) => {
 			return {
 				id: index,
-				bookName: `${item} book`,
+				code: `${item} code`,				
+				name: `${item} book`,
 				genre: `${item} genre`,
 				author: `${item} author`,
 				publisher: `${item} data`,
@@ -89,12 +90,14 @@ function LibraryDatabase() {
 
 				<div className="table_area">
 					{user && (
-						<div className="button_area">
+						<div className="button_area">		
+
 							<button
 								className="create__button"
 								onClick={(e) => handleShow("create")}
 							>
-								Create
+								Add
+
 							</button>
 							{selectedItems.length === 1 && (
 								<button
@@ -129,12 +132,80 @@ function LibraryDatabase() {
 			</div>
 			{show.create && (
 				<Popup close={handleClose}>
-					<h1>Create</h1>
+					<div className="form__container">
+						<h1>Add New Book to the Library Database</h1>
+						<form>
+							<div className="input__field">
+								Code:
+								<input type="text" name="code" />
+							</div>
+							<div className="input__field">
+								Name:
+								<input type="text" name="name" />
+							</div>
+							<div className="input__field">
+								Genre:
+								<select>
+									<option value="shorten">Science</option>
+									<option value="extend">History</option>
+								</select>
+							</div>
+							<div className="input__field">
+								Author:
+								<input type="text" name="author" />
+							</div>
+							<div className="input__field">
+								Publisher:
+								<input type="text" name="publisher" />
+							</div>
+							<div className="submit_button__container">
+								<input
+									className="submit__button"
+									type="submit"
+									value="Create"
+								/>
+							</div>
+						</form>
+					</div>
 				</Popup>
 			)}
 			{show.edit && (
 				<Popup close={handleClose}>
-					<h1>Edit</h1>
+					<div className="form__container">
+						<h1>Edit Book Information</h1>
+						<form>
+							<div className="input__field">
+								Code:
+								<input type="text" name="code" />
+							</div>
+							<div className="input__field">
+								Name:
+								<input type="text" name="name" />
+							</div>
+							<div className="input__field">
+								Genre:
+								<select>
+									<option value="shorten">Science</option>
+									<option value="extend">History</option>
+								</select>
+							</div>
+							<div className="input__field">
+								Author:
+								<input type="text" name="author" />
+							</div>
+							<div className="input__field">
+								Publisher:
+								<input type="text" name="publisher" />
+							</div>
+							<div className="submit_button__container">
+								<input
+									className="submit__button"
+									type="submit"
+									value="Edit"
+								/>
+							</div>
+						</form>
+					</div>
 				</Popup>
 			)}
 		</>

@@ -92,13 +92,28 @@ function Jobs() {
 					{user && (
 						<>
 							<div className="button_area">
-								<button onClick={(e) => handleShow("create")}>
+								<button
+									className="create__button"
+									onClick={(e) => handleShow("create")}
+								>
 									Create
 								</button>
-								<button onClick={(e) => handleShow("edit")}>
-									Edit
-								</button>
-								<button onClick={handleDelete}>Delete</button>
+								{selectedItems.length === 1 && (
+									<button
+										className="edit__button"
+										onClick={(e) => handleShow("edit")}
+									>
+										Edit
+									</button>
+								)}
+								{selectedItems.length > 0 && (
+									<button
+										className="delete__button"
+										onClick={handleDelete}
+									>
+										Delete
+									</button>
+								)}
 							</div>
 
 							<Table

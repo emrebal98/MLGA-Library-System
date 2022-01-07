@@ -90,14 +90,31 @@ function LibraryDatabase() {
 
 				<div className="table_area">
 					{user && (
-						<div className="button_area">
-							<button onClick={(e) => handleShow("create")}>
+						<div className="button_area">		
+
+							<button
+								className="create__button"
+								onClick={(e) => handleShow("create")}
+							>
 								Add
+
 							</button>
-							<button onClick={(e) => handleShow("edit")}>
-								Edit
-							</button>
-							<button onClick={handleDelete}>Delete</button>
+							{selectedItems.length === 1 && (
+								<button
+									className="edit__button"
+									onClick={(e) => handleShow("edit")}
+								>
+									Edit
+								</button>
+							)}
+							{selectedItems.length > 0 && (
+								<button
+									onClick={handleDelete}
+									className="delete__button"
+								>
+									Delete
+								</button>
+							)}
 						</div>
 					)}
 

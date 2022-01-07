@@ -6,15 +6,15 @@
 	margin-bottom: 5rem;
 	padding: 0 2rem;
 }
-.table_area {
+.Appointment .table_area {
 	padding: 6rem 2rem;
 }
 
-.table_area .button_area {
+.Appointment .table_area .button_area {
 	margin-bottom: 1.5rem;
 }
 
-.table_area .button_area button {
+.Appointment .table_area .button_area button {
 	border: none;
 	background-color: unset;
 	padding: 0.5rem 1rem;
@@ -24,19 +24,25 @@
 	color: white;
 }
 
-.table_area .button_area button:nth-child(1) {
-	background: #940101;
+.Appointment .table_area .button_area .create__button {
+	background: #08dd55;
 }
 
-.table_area .button_area button:nth-child(1):hover {
-	background: #940101;
+.Appointment .table_area .button_area .create__button:hover {
+	background: #07b747;
 }
 
-.table_area .button_area button:nth-child(2) {
+.Appointment .table_area .button_area .edit__button {
+	background: #107bff;
+}
+
+.Appointment .table_area .button_area .edit__button:hover {
+	background: #106bff;
+}
+.Appointment .table_area .button_area .delete__button {
 	background: #f90204;
 }
-
-.table_area .button_area button:nth-child(2):hover {
+.Appointment .table_area .button_area .delete__button:hover {
 	background: #c50103;
 }
 
@@ -144,6 +150,11 @@ input:checked + .slider:before {
 	user-select: none;
 }
 
+.seat.disabled {
+	background-color: red;
+	cursor: not-allowed;
+}
+
 .seat.selected {
 	background: rgb(0, 140, 255);
 }
@@ -172,6 +183,33 @@ input:checked + .slider:before {
 	padding: 0.4rem;
 	cursor: pointer;
 	margin: 1rem;
+}
+
+.date__container {
+	display: flex;
+	justify-content: flex-end;
+	margin-bottom: 1rem;
+}
+
+.group_canvas {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	gap: 1rem;
+}
+
+.group_canvas .seat_group {
+	justify-content: center;
+	border-radius: 10rem;
+	cursor: pointer;
+}
+
+.group_canvas .seat_group.selected {
+	background: rgb(0, 140, 255);
+}
+
+.group_canvas .seperator {
+	height: 100px;
+	width: 50px;
 }
 
 .form__container {
@@ -219,5 +257,5 @@ form textarea {
 }
 
 .submit__button:hover {
-	background: #07b747;
+  background: #07b747;
 }

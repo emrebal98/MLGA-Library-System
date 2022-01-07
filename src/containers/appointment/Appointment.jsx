@@ -168,6 +168,27 @@ function Appointment() {
 		return list;
 	}
 
+	function getGroupSeats() {
+		var list = [];
+
+		for (let i = 0; i < 6; i++) {
+			list.push(
+				<div
+					className={
+						selectedSeat === i + 1
+							? "seat_group selected"
+							: "seat_group"
+					}
+					onClick={(e) => setSelectedSeat(i + 1)}
+				>
+					<div className="seperator"></div>
+				</div>
+			);
+		}
+
+		return list;
+	}
+
 	// function handleContinue() {
 	// 	setShowNext(true);
 	// }
@@ -201,14 +222,29 @@ function Appointment() {
 						{!user && (
 							<div className="button_area">
 								<button
+									className="create__button"
 									onClick={(e) => setAppointmentPage(true)}
 								>
 									Make an Appointment
 								</button>
-								<button onClick={(e) => handleShow("edit")}>
-									Change in Appointment
-								</button>
-								<button onClick={handleDelete}>Cancel the Appointment</button>
+
+								{selectedItems.length === 1 && (
+									<button
+										className="edit__button"
+										onClick={(e) => handleShow("edit")}
+									>
+										Change in Appointment
+									</button>
+								)}
+								{selectedItems.length > 0 && (
+									<button
+										onClick={handleDelete}
+										className="delete__button"
+									>
+										Cancel the Appointment
+									</button>
+								)}
+
 							</div>
 						)}
 
@@ -232,12 +268,20 @@ function Appointment() {
 							</TabList>
 
 							<TabPanel>
-								<DateTimePicker
-									format="yyyy-MM-dd HH:mm"
-									clearIcon={null}
-									onChange={setSelectedDate}
-									value={selectedDate}
-								/>
+								<div className="date__container">
+									<DateTimePicker
+										format="yyyy-MM-dd HH:mm"
+										clearIcon={null}
+										onChange={setSelectedDate}
+										value={selectedDate}
+										minDate={selectedDate}
+										maxDate={moment(selectedDate)
+											.add({
+												months: 1,
+											})
+											.toDate()}
+									/>
+								</div>
 								<div className="library_canvas">
 									{getSeats()}
 								</div>
@@ -253,7 +297,27 @@ function Appointment() {
 								</div>
 							</TabPanel>
 							<TabPanel>
-								<div className="group_canvas">group</div>
+								<div className="date__container">
+									<DateTimePicker
+										format="yyyy-MM-dd HH:mm"
+										clearIcon={null}
+										onChange={setSelectedDate}
+										value={selectedDate}
+									/>
+								</div>
+								<div className="group_canvas">
+									{getGroupSeats()}
+								</div>
+								<div className="library_canvas__button_container">
+									<button
+										onClick={(e) => {
+											if (selectedSeat)
+												handleShow("next");
+										}}
+									>
+										Continue
+									</button>
+								</div>
 							</TabPanel>
 						</Tabs>
 					</div>
@@ -293,22 +357,25 @@ function Appointment() {
 						Selected start time:{" "}
 						{moment(selectedDate).format("yyyy-MM-DD HH:mm:ss")}
 					</div>
-					<input
-						type="number"
-						min={1}
-						max={6}
-						defaultValue={1}
-						onChange={(e) => {
-							if (e.target.value) {
-								if (e.target.value > 6) {
-									e.target.value = 6;
+					<div>
+						Duration:{" "}
+						<input
+							type="number"
+							min={1}
+							max={6}
+							defaultValue={1}
+							onChange={(e) => {
+								if (e.target.value) {
+									if (e.target.value > 6) {
+										e.target.value = 6;
+									}
+									if (e.target.value < 1) {
+										e.target.value = 1;
+									}
 								}
-								if (e.target.value < 1) {
-									e.target.value = 1;
-								}
-							}
-						}}
-					/>
+							}}
+						/>
+					</div>
 					<button>Create</button>
 				</Popup>
 			)}

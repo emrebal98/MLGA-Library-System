@@ -5,6 +5,8 @@
 .jobs h1 {
 	margin-bottom: 5rem;
 	padding: 0 2rem;
+	color: white;
+	background-color: rgb(9, 4, 43);
 }
 .jobs .table_area {
 	padding: 6rem 2rem;
@@ -160,6 +162,5 @@ form textarea {
 .card__container {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-
 	gap: 1.5rem;
 }

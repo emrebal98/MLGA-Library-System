@@ -27,7 +27,7 @@ function Navbar() {
 					<div className="r-icon icon">
 						<BiBookAlt />
 					</div>
-					<div className="logo_name">MLGA</div>
+					<div className="logo_name">MAKE LIBRARIES GREAT AGAIN</div>
 					<div className="r-icon" id="btn" onClick={toggleMenu}>
 						{!open ? <BiMenu /> : <BiMenuAltRight />}
 					</div>
@@ -56,9 +56,9 @@ function Navbar() {
 							<div className="r-icon">
 								<BiLayer />
 							</div>
-							<span className="links_name">Library Databse</span>
+							<span className="links_name">Library Database</span>
 						</Link>
-						<span className="tooltip">Library Databse</span>
+						<span className="tooltip">Library Database</span>
 					</li>
 					<li>
 						<Link to="/computers">
@@ -74,9 +74,9 @@ function Navbar() {
 							<div className="r-icon">
 								<BiStation />
 							</div>
-							<span className="links_name">Jobs</span>
+							<span className="links_name">Job Opportunities</span>
 						</Link>
-						<span className="tooltip">Jobs</span>
+						<span className="tooltip">Job Opportunities</span>
 					</li>
 
 					<li className="profile">
@@ -90,6 +90,7 @@ function Navbar() {
 						<div className="r-icon" id="log_out" onClick={handleLogout}>
 							<BiLogOut />
 						</div>
+
 					</li>
 				</ul>
 			</div>

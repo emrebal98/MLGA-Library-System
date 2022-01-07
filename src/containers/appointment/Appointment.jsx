@@ -214,7 +214,7 @@ function Appointment() {
 						{user && (
 							<div className="button_area">
 								<button
-									className="create__button"
+									className="apply__button"
 									onClick={(e) => handleShow("Sanction")}
 								>
 									Apply a Sanction

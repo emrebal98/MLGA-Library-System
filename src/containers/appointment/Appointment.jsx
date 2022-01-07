@@ -168,6 +168,27 @@ function Appointment() {
 		return list;
 	}
 
+	function getGroupSeats() {
+		var list = [];
+
+		for (let i = 0; i < 6; i++) {
+			list.push(
+				<div
+					className={
+						selectedSeat === i + 1
+							? "seat_group selected"
+							: "seat_group"
+					}
+					onClick={(e) => setSelectedSeat(i + 1)}
+				>
+					<div className="seperator"></div>
+				</div>
+			);
+		}
+
+		return list;
+	}
+
 	// function handleContinue() {
 	// 	setShowNext(true);
 	// }
@@ -227,17 +248,19 @@ function Appointment() {
 					<div className="create_appointment_container">
 						<Tabs>
 							<TabList>
-								<Tab>Title 1</Tab>
-								<Tab>Title 2</Tab>
+								<Tab>Library</Tab>
+								<Tab>Group Work Areas</Tab>
 							</TabList>
 
 							<TabPanel>
-								<DateTimePicker
-									format="yyyy-MM-dd HH:mm"
-									clearIcon={null}
-									onChange={setSelectedDate}
-									value={selectedDate}
-								/>
+								<div className="date__container">
+									<DateTimePicker
+										format="yyyy-MM-dd HH:mm"
+										clearIcon={null}
+										onChange={setSelectedDate}
+										value={selectedDate}
+									/>
+								</div>
 								<div className="library_canvas">
 									{getSeats()}
 								</div>
@@ -253,7 +276,27 @@ function Appointment() {
 								</div>
 							</TabPanel>
 							<TabPanel>
-								<div className="group_canvas">group</div>
+								<div className="date__container">
+									<DateTimePicker
+										format="yyyy-MM-dd HH:mm"
+										clearIcon={null}
+										onChange={setSelectedDate}
+										value={selectedDate}
+									/>
+								</div>
+								<div className="group_canvas">
+									{getGroupSeats()}
+								</div>
+								<div className="library_canvas__button_container">
+									<button
+										onClick={(e) => {
+											if (selectedSeat)
+												handleShow("next");
+										}}
+									>
+										Continue
+									</button>
+								</div>
 							</TabPanel>
 						</Tabs>
 					</div>
@@ -276,22 +319,25 @@ function Appointment() {
 						Selected start time:{" "}
 						{moment(selectedDate).format("yyyy-MM-DD HH:mm:ss")}
 					</div>
-					<input
-						type="number"
-						min={1}
-						max={6}
-						defaultValue={1}
-						onChange={(e) => {
-							if (e.target.value) {
-								if (e.target.value > 6) {
-									e.target.value = 6;
+					<div>
+						Duration:{" "}
+						<input
+							type="number"
+							min={1}
+							max={6}
+							defaultValue={1}
+							onChange={(e) => {
+								if (e.target.value) {
+									if (e.target.value > 6) {
+										e.target.value = 6;
+									}
+									if (e.target.value < 1) {
+										e.target.value = 1;
+									}
 								}
-								if (e.target.value < 1) {
-									e.target.value = 1;
-								}
-							}
-						}}
-					/>
+							}}
+						/>
+					</div>
 					<button>Create</button>
 				</Popup>
 			)}

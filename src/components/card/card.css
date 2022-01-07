@@ -1,0 +1,99 @@
+.card {
+	width: 200px;
+	background: gray;
+	color: white;
+	border-radius: 1rem;
+	box-shadow: 2rem 2rem 10rem 2rem rgba(0, 0, 0, 0.1);
+}
+
+.card .title {
+	font-weight: bold;
+	font-size: 1.5rem;
+	text-align: center;
+}
+.card .description {
+	margin: 0.4rem;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	overflow-y: scroll;
+	height: 300px;
+}
+
+.card .read_more {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 1.2rem;
+	margin-bottom: 0.5rem;
+	cursor: pointer;
+}
+
+.card .apply_button__container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.card .apply_button {
+	border: none;
+	background-color: unset;
+	background: #08dd55;
+	padding: 0.3rem;
+	color: white;
+	margin-bottom: 1rem;
+	cursor: pointer;
+}
+
+.card .apply_button:disabled {
+	background: #6fd494;
+	cursor: not-allowed;
+}
+
+.confirm_dialog_container {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(90, 90, 90, 0.5);
+	z-index: 9999;
+}
+
+.confirm_dialog {
+	color: black;
+	background-color: white;
+	border-radius: 1rem;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	/* width: 20%; */
+	height: 7rem;
+}
+
+.confirm_dialog h1 {
+	margin: 0 !important;
+}
+
+.button_container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 1rem;
+}
+
+.confirm_dialog button {
+	border: none;
+	background-color: unset;
+	padding: 0.5rem;
+	color: white;
+	margin: 0 0.5rem;
+	cursor: pointer;
+}
+
+.confirm_dialog button:nth-child(1) {
+	background-color: #07a842;
+}
+.confirm_dialog button:nth-child(2) {
+	background-color: #f90204;
+}

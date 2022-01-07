@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import { Table, Popup } from "../../components";
+import { Table, Popup, Card } from "../../components";
 import { Notification } from "../../helper/notfiy";
 import "./jobs.css";
 
 function Jobs() {
-
 	const randomTexts = Array.apply(null, Array(21)).map(function () {
 		return Array.apply(null, Array(~~(Math.random() * 10 + 3)))
 			.map(function () {
@@ -68,6 +67,10 @@ function Jobs() {
 		setCheckedClear((prevState) => !prevState);
 	}
 
+	function handleApply(e) {
+		Notification.success("Job applied successfully");
+	}
+
 	return (
 		<>
 			<div className="jobs">
@@ -87,67 +90,88 @@ function Jobs() {
 
 				<div className="table_area">
 					{user && (
-						<div className="button_area">
-							<button onClick={(e) => handleShow("create")}>
-								Create
-							</button>
-							<button onClick={(e) => handleShow("edit")}>
-								Edit
-							</button>
-							<button onClick={handleDelete}>Delete</button>
+						<>
+							<div className="button_area">
+								<button onClick={(e) => handleShow("create")}>
+									Create
+								</button>
+								<button onClick={(e) => handleShow("edit")}>
+									Edit
+								</button>
+								<button onClick={handleDelete}>Delete</button>
+							</div>
+
+							<Table
+								checkBox={true}
+								search={false}
+								selectedItems={selectedItems}
+								setSelectedItems={setSelectedItems}
+								allItems={allItems}
+								titles={Object.keys(allItems[0])}
+								checkedClear={checkedClear}
+								setCheckedClear={setCheckedClear}
+							/>
+						</>
+					)}
+					{!user && (
+						<div className="card__container">
+							{Array.apply(null, Array(21)).map((item) => (
+								<Card
+									title={"Test title"}
+									description={
+										"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum dicta rerum delectus eos eligendi, in quos magni, iste corporis, quidem ut tempora? Blanditiis dolores cupiditate sit quam, voluptate atque sunt?Cum, dolore vitae magni quam dicta ullam enim corporis reiciendis accusamus impedit similique optio sit numquam distinctio eum quia fugiat velit natus fuga tempora recusandae rerum voluptas illo nemo? Repellat."
+									}
+									onApply={handleApply}
+								/>
+							))}
 						</div>
 					)}
-
-					<Table
-						checkBox={user}
-						search={true}
-						selectedItems={selectedItems}
-						setSelectedItems={setSelectedItems}
-						allItems={allItems}
-						titles={Object.keys(allItems[0])}
-						checkedClear={checkedClear}
-						setCheckedClear={setCheckedClear}
-					/>
 				</div>
 			</div>
 			{show.create && (
 				<Popup close={handleClose}>
-					<div className="create_job">
+					<div className="form__container">
 						<h1>Create New Job Posting</h1>
 						<form>
-							<label>
-							Job Name: <br />
-							<input type="text" name="name"/>
-							</label>
-							<br />
-							<label>
-							Job Description: <br />
-							<textarea id="w3review" name="w3review" rows="4" cols="50">
-  							</textarea>
-							</label>
-							<br />
-							<input type="submit" value="Post"/>
+							<div className="input__field">
+								Job Name:
+								<input type="text" name="name" />
+							</div>
+							<div className="input__field">
+								Job Description:
+								<textarea rows="4" cols="50"></textarea>
+							</div>
+							<div className="submit_button__container">
+								<input
+									className="submit__button"
+									type="submit"
+									value="Create"
+								/>
+							</div>
 						</form>
 					</div>
 				</Popup>
 			)}
 			{show.edit && (
 				<Popup close={handleClose}>
-					<div className="edit_job">
+					<div className="form__container">
 						<h1>Edit Job Posting</h1>
 						<form>
-							<label>
-							Job Name: <br />
-							<input type="text" name="name"/>
-							</label>
-							<br />
-							<label>
-							Job Description: <br />
-							<textarea id="w3review" name="w3review" rows="4" cols="50">
-  							</textarea>
-							</label>
-							<br />
-							<input type="submit" value="Edit"/>
+							<div className="input__field">
+								Job Name:
+								<input type="text" name="name" />
+							</div>
+							<div className="input__field">
+								Job Description:
+								<textarea rows="4" cols="50"></textarea>
+							</div>
+							<div className="submit_button__container">
+								<input
+									className="submit__button"
+									type="submit"
+									value="Edit"
+								/>
+							</div>
 						</form>
 					</div>
 				</Popup>

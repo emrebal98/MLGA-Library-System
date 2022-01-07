@@ -212,10 +212,18 @@ function Appointment() {
 					<div className="table_area">
 						{user && (
 							<div className="button_area">
-								<button onClick={(e) => handleShow("Sanction")}>
+								<button
+									className="create__button"
+									onClick={(e) => handleShow("Sanction")}
+								>
 									Apply a Sanction
 								</button>
-								<button onClick={handleDelete}>Cancel the Appointment</button>
+								<button
+									className="delete__button"
+									onClick={handleDelete}
+								>
+									Cancel the Appointment
+								</button>
 							</div>
 						)}
 
@@ -244,7 +252,6 @@ function Appointment() {
 										Cancel the Appointment
 									</button>
 								)}
-
 							</div>
 						)}
 
@@ -335,8 +342,12 @@ function Appointment() {
 						<form>
 							<div className="input__field">
 								<select>
-									<option value="shorten">Shorten the Appointment</option>
-									<option value="extend">Extend the Appointment</option>
+									<option value="shorten">
+										Shorten the Appointment
+									</option>
+									<option value="extend">
+										Extend the Appointment
+									</option>
 								</select>
 							</div>
 							<div className="submit_button__container">

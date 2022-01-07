@@ -211,7 +211,6 @@ input:checked + .slider:before {
 	height: 100px;
 	width: 50px;
 }
-
 .form__container {
 	/* width: fit-content; */
 	display: flex;
@@ -257,5 +256,5 @@ form textarea {
 }
 
 .submit__button:hover {
-  background: #07b747;
+	background: #07b747;
 }

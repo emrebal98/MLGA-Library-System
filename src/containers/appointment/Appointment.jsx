@@ -222,14 +222,27 @@ function Appointment() {
 						{!user && (
 							<div className="button_area">
 								<button
+									className="create__button"
 									onClick={(e) => setAppointmentPage(true)}
 								>
 									Make an Appointment
 								</button>
-								<button onClick={(e) => handleShow("edit")}>
-									Edit
-								</button>
-								<button onClick={handleDelete}>Cancel</button>
+								{selectedItems.length === 1 && (
+									<button
+										className="edit__button"
+										onClick={(e) => handleShow("edit")}
+									>
+										Edit
+									</button>
+								)}
+								{selectedItems.length > 0 && (
+									<button
+										onClick={handleDelete}
+										className="delete__button"
+									>
+										Cancel
+									</button>
+								)}
 							</div>
 						)}
 
@@ -259,6 +272,12 @@ function Appointment() {
 										clearIcon={null}
 										onChange={setSelectedDate}
 										value={selectedDate}
+										minDate={selectedDate}
+										maxDate={moment(selectedDate)
+											.add({
+												months: 1,
+											})
+											.toDate()}
 									/>
 								</div>
 								<div className="library_canvas">

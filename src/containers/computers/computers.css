@@ -1,0 +1,53 @@
+.computers {
+	padding: 2rem;
+}
+
+.computers h1 {
+	margin-bottom: 5rem;
+	padding: 0 2rem;
+}
+
+.computer__container {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	gap: 1rem;
+	background: #c3c3c3;
+	padding: 5rem;
+	user-select: none;
+}
+
+.computer__container .computer {
+	width: 75px;
+	height: 75px;
+	background: green;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	border-radius: 1rem;
+	position: relative;
+}
+
+.computer__container .computer.disabled {
+	background: red;
+}
+
+.computer__container .computer .img {
+	display: flex;
+
+	align-items: center;
+	justify-content: center;
+	font-size: 2rem;
+	color: white;
+}
+.computer__container .computer .title {
+	/* background-color: aqua; */
+	/* top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%); */
+	color: white;
+	/* background-color: coral; */
+	/* padding: 0.2rem; */
+	border-radius: 1rem;
+	/* position: absolute; */
+}

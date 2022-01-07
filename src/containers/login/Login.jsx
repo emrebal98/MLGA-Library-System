@@ -34,17 +34,7 @@ function Login() {
 		label: "Password",
 		pattern: `^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$`,
 		required: true,
-	  },
-	  {
-		id: 3,
-		name: "confirmPassword",
-		type: "password",
-		placeholder: "Confirm Password",
-		errorMessage: "Passwords don't match!",
-		label: "Confirm Password",
-		pattern: values.password,
-		required: true,
-	  },
+	  }
 	];
   
 	const handleSubmit = (e) => {
@@ -58,7 +48,7 @@ function Login() {
 	return (
 	  <div className="app">
 		<form onSubmit={handleSubmit}>
-		  <h1>Medipol Library System</h1>
+		  <h1>Make Libraries Great Again</h1>
 		  {inputs.map((input) => (
 			<FormInput
 			  key={input.id}
@@ -72,8 +62,6 @@ function Login() {
 	  </div>
 	);
   };
-
-
 
 /*
 

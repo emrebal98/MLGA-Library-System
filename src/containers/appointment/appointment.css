@@ -5,6 +5,8 @@
 .Appointment h1 {
 	margin-bottom: 5rem;
 	padding: 0 2rem;
+	color: white;
+	background-color: rgb(9, 4, 43);
 }
 .Appointment .table_area {
 	padding: 6rem 2rem;
@@ -30,6 +32,14 @@
 
 .Appointment .table_area .button_area .create__button:hover {
 	background: #07b747;
+}
+
+.Appointment .table_area .button_area .apply__button {
+	background: #800000;
+}
+
+.Appointment .table_area .button_area .apply__button:hover {
+	background: #5a0707;
 }
 
 .Appointment .table_area .button_area .edit__button {
@@ -110,6 +120,7 @@ input:checked + .slider:before {
 
 .create_appointment_container {
 	padding: 6rem 2rem;
+	color: rgb(9, 4, 43);
 	/* background: gray; */
 }
 
@@ -132,7 +143,7 @@ input:checked + .slider:before {
 
 .seat_group {
 	display: flex;
-	background: #c3c3c3;
+	background: #e0e0e0;
 	width: 230px;
 	/* margin: 0 5rem 1rem 0; */
 }
@@ -140,7 +151,7 @@ input:checked + .slider:before {
 .seat {
 	width: 50px;
 	height: 50px;
-	background-color: green;
+	background-color: #08dd55;
 	margin: 1rem;
 	display: flex;
 	align-items: center;
@@ -167,7 +178,7 @@ input:checked + .slider:before {
 
 .seperator {
 	width: 25px;
-	background: #4b4b4b;
+	background: rgb(9, 4, 43);
 	margin: 1rem;
 }
 
@@ -178,7 +189,7 @@ input:checked + .slider:before {
 
 .react-tabs__tab-panel .library_canvas__button_container button {
 	border: none;
-	background: black;
+	background: rgb(9, 4, 43);
 	color: white;
 	padding: 0.4rem;
 	cursor: pointer;
@@ -268,6 +279,7 @@ form textarea {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	color: rgb(9, 4, 43);
 }
 
 .create_appointment_container .back span {

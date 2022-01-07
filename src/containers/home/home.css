@@ -5,6 +5,8 @@
 .home h1 {
 	margin-bottom: 5rem;
 	padding: 0 2rem;
+	color: white;
+	background-color: rgb(9, 4, 43);
 }
 
 .container {
@@ -45,7 +47,7 @@
 }
 
 .grey_box {
-	background-color: grey;
+	background-color: rgb(9, 4, 43);
 	height: 200px;
 	width: 280px;
 	color: white;
@@ -62,6 +64,10 @@ img {
 .read_container p {
 	font-size: 1.1rem;
 	margin: 1rem 0;
+}
+
+.read_container h1 {
+	color: rgb(9, 4, 43);
 }
 
 /*
@@ -138,6 +144,6 @@ img {
 }
 
 .read-or-hide {
-	color: rgb(192, 192, 192);
+	color: #e0e0e0;
 	cursor: pointer;
 }

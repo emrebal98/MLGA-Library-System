@@ -5,6 +5,8 @@
 .library_database h1 {
 	margin-bottom: 5rem;
 	padding: 0 2rem;
+	color: white;
+	background-color: rgb(9, 4, 43);
 }
 .library_database .table_area {
 	padding: 6rem 2rem;

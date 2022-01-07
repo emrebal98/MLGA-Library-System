@@ -5,13 +5,15 @@
 .computers h1 {
 	margin-bottom: 5rem;
 	padding: 0 2rem;
+	color: white;
+	background-color: rgb(9, 4, 43);
 }
 
 .computer__container {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 	gap: 1rem;
-	background: #c3c3c3;
+	background: #e0e0e0;
 	padding: 5rem;
 	user-select: none;
 }
@@ -19,7 +21,7 @@
 .computer__container .computer {
 	width: 75px;
 	height: 75px;
-	background: green;
+	background: #08dd55;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -29,7 +31,7 @@
 }
 
 .computer__container .computer.disabled {
-	background: red;
+	background: #f90204;
 }
 
 .computer__container .computer .img {

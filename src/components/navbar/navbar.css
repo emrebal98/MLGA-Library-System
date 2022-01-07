@@ -10,7 +10,7 @@
 	transition: all 0.5s ease;
 }
 .sidebar.open {
-	width: 250px;
+	width: 270px;
 }
 .sidebar .logo-details {
 	height: 60px;
@@ -71,7 +71,7 @@
 	left: calc(100% + 15px);
 	z-index: 3;
 	background: var(--white);
-	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+	box-shadow: 0 5px 10px rgba(201, 89, 89, 0.3);
 	padding: 6px 12px;
 	border-radius: 4px;
 	font-size: 15px;
@@ -129,7 +129,6 @@
 	font-size: 18px;
 	border-radius: 12px;
 }
-
 .sidebar li.profile {
 	position: fixed;
 	height: 60px;

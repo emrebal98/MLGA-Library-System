@@ -7,7 +7,7 @@
 .table {
 	border-collapse: collapse;
 	width: 100%;
-	border: 1px solid #ddd;
+	border: 1px solid rgb(9, 4, 43);
 	font-size: 18px;
 }
 
@@ -18,13 +18,14 @@
 }
 
 .table tr {
-	border-bottom: 1px solid #ddd;
+	border-bottom: 1px solid rgb(9, 4, 43);
 }
 
 .table tr.header {
-	background-color: #f1f1f1;
+	background-color: rgb(9, 4, 43);
 	position: sticky;
 	top: 0;
+	color: white;
 }
 
 .center_selected {

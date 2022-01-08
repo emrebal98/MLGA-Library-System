@@ -82,11 +82,13 @@ function Navbar() {
 					<li className="profile">
 						<div className="profile-details">
 							{/* <img src="profile.jpg" alt="profileImg"> */}
+
 							<div className="name_job">
 								<div className="name">Name Surname</div>
 								<div className="job">Student</div>
 							</div>
 						</div>
+
 						<div className="r-icon" id="log_out" onClick={handleLogout}>
 							<BiLogOut />
 						</div>

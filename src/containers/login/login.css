@@ -3,28 +3,30 @@
 	align-items: center;
 	justify-content: center;
 	height: 100vh;
-	background-color: rgb(9, 4, 43);
+	background-color: white;
 	background-size: cover;
 	background-position: center;
+	flex-direction: column;
 }
 
 .login_area form {
-	background-color: white;
+	background-color: #e0e0e0;
 	padding: 0px 60px;
 	border-radius: 10px;
+	font-weight: bolder;
 }
 
 .login_area form h1 {
-	color: rgb(77, 1, 77);
+	color: rgb(9, 4, 43);
 	text-align: center;
 }
 
 .login_area form button {
-	width: 100%;
+	width: 30%;
 	height: 50px;
 	padding: 10px;
 	border: none;
-	background-color: rebeccapurple;
+	background-color: rgb(9, 4, 43);
 	color: white;
 	border-radius: 5px;
 	font-weight: bold;

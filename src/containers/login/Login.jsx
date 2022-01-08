@@ -58,7 +58,7 @@ function Login() {
 						onChange={onChange}
 					/>
 				))}
-				<button>Login</button>
+				<center><button>Login</button></center>
 			</form>
 		</div>
 	);

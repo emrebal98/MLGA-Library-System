@@ -223,7 +223,7 @@ function Appointment() {
 									className="delete__button"
 									onClick={handleDelete}
 								>
-									Cancel the Appointment
+									Invalidate the Appointment
 								</button>
 							</div>
 						)}

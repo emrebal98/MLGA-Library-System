@@ -1,0 +1,238 @@
+.sidebar {
+	position: fixed;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 78px;
+	background: var(--sidebar-primary-color);
+	padding: 6px 14px;
+	z-index: 99;
+	transition: all 0.5s ease;
+}
+.sidebar.open {
+	width: 270px;
+}
+.sidebar .logo-details {
+	height: 60px;
+	display: flex;
+	align-items: center;
+	position: relative;
+}
+.sidebar .logo-details .icon {
+	opacity: 0;
+	transition: all 0.5s ease;
+}
+.sidebar .logo-details .logo_name {
+	color: var(--white);
+	font-size: 20px;
+	font-weight: 600;
+	opacity: 0;
+	transition: all 0.5s ease;
+}
+.sidebar.open .logo-details .icon,
+.sidebar.open .logo-details .logo_name {
+	opacity: 1;
+}
+.sidebar .logo-details #btn {
+	position: absolute;
+	top: 50%;
+	right: 0;
+	transform: translateY(-50%);
+	font-size: 22px;
+	transition: all 0.4s ease;
+	font-size: 23px;
+	text-align: center;
+	cursor: pointer;
+	transition: all 0.5s ease;
+}
+.sidebar.open .logo-details #btn {
+	text-align: right;
+}
+.sidebar .r-icon {
+	color: var(--white);
+	height: 60px;
+	min-width: 50px;
+	font-size: 28px;
+	text-align: center;
+	line-height: 60px;
+}
+.sidebar .nav-list {
+	margin-top: 20px;
+	height: 100%;
+}
+.sidebar li {
+	position: relative;
+	margin: 8px 0;
+	list-style: none;
+}
+.sidebar li .tooltip {
+	position: absolute;
+	top: -20px;
+	left: calc(100% + 15px);
+	z-index: 3;
+	background: var(--white);
+	box-shadow: 0 5px 10px rgba(201, 89, 89, 0.3);
+	padding: 6px 12px;
+	border-radius: 4px;
+	font-size: 15px;
+	font-weight: 400;
+	opacity: 0;
+	white-space: nowrap;
+	pointer-events: none;
+	transition: 0s;
+}
+.sidebar li:hover .tooltip {
+	opacity: 1;
+	pointer-events: auto;
+	transition: all 0.4s ease;
+	top: 50%;
+	transform: translateY(-50%);
+}
+.sidebar.open li .tooltip {
+	display: none;
+}
+
+.sidebar li a {
+	display: flex;
+	height: 100%;
+	width: 100%;
+	border-radius: 12px;
+	align-items: center;
+	text-decoration: none;
+	transition: all 0.4s ease;
+	background: var(--sidebar-primary-color);
+}
+.sidebar li a:hover {
+	background: var(--white);
+}
+.sidebar li a .links_name {
+	color: var(--white);
+	font-size: 15px;
+	font-weight: 400;
+	white-space: nowrap;
+	opacity: 0;
+	pointer-events: none;
+	transition: 0.4s;
+}
+.sidebar.open li a .links_name {
+	opacity: 1;
+	pointer-events: auto;
+}
+.sidebar li a:hover .links_name,
+.sidebar li a:hover .r-icon {
+	transition: all 0.5s ease;
+	color: var(--sidebar-primary-color);
+}
+.sidebar li .r-icon {
+	height: 50px;
+	line-height: 50px;
+	font-size: 18px;
+	border-radius: 12px;
+}
+.sidebar li.profile {
+	position: fixed;
+	height: 60px;
+	width: 78px;
+	left: 0;
+	bottom: -8px;
+	padding: 10px 14px;
+	background: var(--sidebar-bottom-color);
+	transition: all 0.5s ease;
+	overflow: hidden;
+}
+.sidebar.open li.profile {
+	width: 270px;
+}
+.sidebar li .profile-details {
+	display: flex;
+	align-items: center;
+	flex-wrap: nowrap;
+}
+.sidebar li img {
+	height: 45px;
+	width: 45px;
+	object-fit: cover;
+	border-radius: 6px;
+	margin-right: 10px;
+}
+.sidebar li.profile .name,
+.sidebar li.profile .job {
+	font-size: 15px;
+	font-weight: 400;
+	color: var(--white);
+	white-space: nowrap;
+}
+.sidebar li.profile .job {
+	font-size: 12px;
+}
+.sidebar .profile #log_out {
+	position: absolute;
+	top: 50%;
+	right: 0;
+	transform: translateY(-50%);
+	background: var(--sidebar-bottom-color);
+	width: 100%;
+	height: 60px;
+	line-height: 60px;
+	border-radius: 0px;
+	transition: all 0.5s ease;
+}
+.sidebar.open .profile #log_out {
+	width: 50px;
+	background: none;
+}
+.sidebar .profile #log_out:hover {
+	cursor: pointer;
+	background-color: var(--red);
+}
+
+@media (max-width: 420px) {
+	.sidebar li .tooltip {
+		display: none;
+	}
+}
+
+
+
+
+/* Dropdown Button */
+.dropbtn {
+	background-color: #04AA6D;
+	color: white;
+	padding: 16px;
+	font-size: 16px;
+	border: none;
+  }
+  
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+	position: relative;
+	display: inline-block;
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #f1f1f1;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {background-color: #ddd;}
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {display: block;}
+  
+  /* Change the background color of the dropdown button when the dropdown content is shown */
+  .dropdown:hover .dropbtn {background-color: #3e8e41;}

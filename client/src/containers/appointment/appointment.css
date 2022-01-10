@@ -1,0 +1,250 @@
+.Appointment {
+	padding: 2rem;
+}
+
+.Appointment h1 {
+	margin-bottom: 5rem;
+	padding: 0 2rem;
+	color: white;
+	background-color: rgb(9, 4, 43);
+}
+.Appointment .table_area {
+	padding: 6rem 2rem;
+}
+
+.Appointment .table_area .button_area {
+	margin-bottom: 1.5rem;
+}
+
+.Appointment .table_area .button_area button {
+	border: none;
+	background-color: unset;
+	padding: 0.5rem 1rem;
+	margin: 0.3rem;
+	border-radius: 1rem;
+	cursor: pointer;
+	color: white;
+}
+
+.Appointment .table_area .button_area .create__button:disabled {
+	background-color: gray;
+	cursor: not-allowed;
+}
+.Appointment .table_area .button_area .create__button:disabled:hover {
+	background-color: gray;
+}
+.Appointment .table_area .button_area .create__button {
+	background: #08dd55;
+}
+
+.Appointment .table_area .button_area .create__button:hover {
+	background: #07b747;
+}
+
+.Appointment .table_area .button_area .apply__button {
+	background: #800000;
+}
+
+.Appointment .table_area .button_area .apply__button:hover {
+	background: #5a0707;
+}
+
+.Appointment .table_area .button_area .edit__button {
+	background: #107bff;
+}
+
+.Appointment .table_area .button_area .edit__button:hover {
+	background: #106bff;
+}
+.Appointment .table_area .button_area .delete__button {
+	background: #f90204;
+}
+.Appointment .table_area .button_area .delete__button:hover {
+	background: #c50103;
+}
+
+.create_appointment_container {
+	padding: 6rem 2rem;
+	color: rgb(9, 4, 43);
+	/* background: gray; */
+}
+
+.react-tabs__tab-list {
+	display: flex;
+	justify-content: center;
+}
+
+.react-tabs__tab {
+	width: 20rem;
+	margin: 0 1rem;
+	text-align: center;
+}
+
+.library_canvas {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	gap: 1rem;
+}
+.seat_group {
+	display: flex;
+	width: 230px;
+}
+
+.group_canvas .seat_group {
+	display: flex;
+	background-color: #08dd55;
+	width: 230px;
+
+	/* margin: 0 5rem 1rem 0; */
+}
+
+.group_canvas .seat_group.disabled {
+	background-color: red;
+	cursor: not-allowed !important;
+}
+
+.group_canvas .seat_group .seperator {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: white;
+	user-select: none;
+}
+
+.seat {
+	width: 50px;
+	height: 50px;
+	background-color: #08dd55;
+	margin: 1rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: white;
+	cursor: pointer;
+	user-select: none;
+}
+
+.seat.disabled {
+	background-color: red;
+	cursor: not-allowed;
+}
+
+.seat.selected {
+	background: rgb(0, 140, 255);
+}
+
+.seat_left_line,
+.seat_right_line {
+	display: flex;
+	flex-direction: column;
+}
+
+.seperator {
+	width: 25px;
+	background: rgb(9, 4, 43);
+	margin: 1rem;
+}
+
+.library_canvas__button_container {
+	display: flex;
+	justify-content: end;
+}
+
+.react-tabs__tab-panel .library_canvas__button_container button {
+	border: none;
+	background: rgb(9, 4, 43);
+	color: white;
+	padding: 0.4rem;
+	cursor: pointer;
+	margin: 1rem;
+}
+
+.date__container {
+	display: flex;
+	justify-content: flex-end;
+	margin-bottom: 1rem;
+}
+
+.group_canvas {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	gap: 1rem;
+}
+
+.group_canvas .seat_group {
+	justify-content: center;
+	border-radius: 10rem;
+	cursor: pointer;
+}
+
+.group_canvas .seat_group.selected {
+	background: rgb(0, 140, 255);
+}
+
+.group_canvas .seperator {
+	height: 100px;
+	width: 50px;
+}
+.form__container {
+	/* width: fit-content; */
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.input__field {
+	display: flex;
+	flex-direction: column;
+	/* width: 80%; */
+}
+form {
+	margin: 0 1.5rem;
+}
+
+form div {
+	margin-top: 1rem;
+}
+
+form textarea {
+	resize: vertical;
+	width: 300px;
+}
+
+.submit_button__container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.submit__button {
+	border: none;
+	background-color: unset;
+	width: 10rem;
+	padding: 0.5rem 1rem;
+	margin: 0.3rem;
+	border-radius: 1rem;
+	cursor: pointer;
+	color: white;
+	background: #08dd55;
+}
+
+.submit__button:hover {
+	background: #07b747;
+}
+
+.create_appointment_container .back {
+	border: none;
+	background-color: unset;
+	font-size: 2rem;
+	padding: 0.2rem;
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: rgb(9, 4, 43);
+}
+
+.create_appointment_container .back span {
+	font-size: 1rem;
+}

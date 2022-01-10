@@ -1,0 +1,32 @@
+.popup_container {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(90, 90, 90, 0.5);
+	z-index: 9999;
+}
+
+.popup {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	background-color: whitesmoke;
+	transform: translate(-50%, -50%);
+	width: 40%;
+	height: 50%;
+}
+
+.close_button {
+	position: absolute;
+	top: 0;
+	right: 0;
+	font-size: 1.5rem;
+	cursor: pointer;
+	margin: 0.2rem 0.2rem 0 0;
+}
+
+.close_button:hover {
+	color: #f90204;
+}

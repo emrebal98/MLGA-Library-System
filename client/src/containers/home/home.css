@@ -1,0 +1,150 @@
+.home {
+	padding: 2rem;
+}
+
+.home h1 {
+	margin-bottom: 5rem;
+	padding: 0 2rem;
+	color: white;
+	background-color: rgb(9, 4, 43);
+}
+
+.container {
+	background-color: rgb(255, 255, 255);
+	margin: 0;
+	/* height: 50vh; */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-left: 5%;
+
+	width: 80%;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+	grid-gap: 20px;
+}
+
+.container h3 {
+	text-transform: uppercase;
+	text-align: center;
+
+	margin: 0;
+	position: absolute;
+	top: 30%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.container h2 {
+	text-transform: uppercase;
+	text-align: center;
+
+	margin: 0;
+	position: absolute;
+	top: 70%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.grey_box {
+	background-color: rgb(9, 4, 43);
+	height: 200px;
+	width: 280px;
+	color: white;
+	/* border: 2px solid black; */
+	position: relative;
+}
+
+img {
+	width: 100px;
+	border-radius: 8px;
+	margin-bottom: 10px;
+}
+
+.read_container p {
+	font-size: 1.1rem;
+	margin: 1rem 0;
+}
+
+.read_container h1 {
+	color: rgb(9, 4, 43);
+	color: white;
+}
+
+/*
+.test *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.test body*{
+    background-color: #f5f7f9;
+    font-family: Open Sans,sans-serif;
+}
+
+
+
+.ann_box{
+    width: 30%;
+    float: left;
+    margin: 50px 20px;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.15);
+}
+
+.ann_box h4{
+    margin-bottom: 10px;
+}
+
+.ann_box p{
+    font-size: 15px;
+    line-height: 28px;
+    height: 90px;
+    overflow: hidden;
+}
+
+.ann_box a{
+    display: inline;
+    color: #fff;
+    background-color: #2196f3;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin-top: 15px;
+}
+
+.ann_box a:hover{
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.ann_box.showContent p{
+    height: auto;
+}
+
+*/
+
+.read_container {
+	position: absolute;
+	padding-top: 5%;
+	left: 5%;
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+}
+
+.read_container h2 {
+	padding-bottom: 40px;
+}
+
+.text {
+	display: inline;
+	width: 100%;
+}
+
+.read-or-hide {
+	color: #e0e0e0;
+	cursor: pointer;
+}

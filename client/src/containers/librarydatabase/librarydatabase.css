@@ -1,0 +1,99 @@
+.library_database {
+	padding: 2rem;
+}
+
+.library_database h1 {
+	margin-bottom: 5rem;
+	padding: 0 2rem;
+	color: white;
+	background-color: rgb(9, 4, 43);
+}
+.library_database .table_area {
+	padding: 6rem 2rem;
+}
+
+.library_database .table_area .button_area {
+	margin-bottom: 1.5rem;
+}
+
+.library_database .table_area .button_area button {
+	border: none;
+	background-color: unset;
+	padding: 0.5rem 1rem;
+	margin: 0.3rem;
+	border-radius: 1rem;
+	cursor: pointer;
+	color: white;
+}
+
+.library_database .table_area .button_area .create__button {
+	background: #08dd55;
+}
+
+.library_database .table_area .button_area .create__button:hover {
+	background: #07b747;
+}
+
+.library_database .table_area .button_area .edit__button {
+	background: #107bff;
+}
+
+.library_database .table_area .button_area .edit__button:hover {
+	background: #106bff;
+}
+.library_database .table_area .button_area .delete__button {
+	background: #f90204;
+}
+
+.library_database .table_area .button_area .delete__button:hover {
+	background: #c50103;
+}
+
+.form__container {
+	/* width: fit-content; */
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.input__field {
+	display: flex;
+	flex-direction: column;
+	/* width: 80%; */
+}
+
+form {
+	margin: 0 1.5rem;
+}
+
+form div {
+	margin-top: 1rem;
+}
+
+form textarea {
+	resize: vertical;
+	width: 300px;
+}
+
+.submit_button__container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.submit__button {
+	border: none;
+	background-color: unset;
+	width: 10rem;
+	padding: 0.5rem 1rem;
+	margin: 0.3rem;
+	border-radius: 1rem;
+	cursor: pointer;
+	color: white;
+	background: #08dd55;
+}
+
+.submit__button:hover {
+	background: #07b747;
+}

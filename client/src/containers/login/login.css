@@ -1,0 +1,39 @@
+.login_area {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	background-color: white;
+	background-size: cover;
+	background-position: center;
+	flex-direction: column;
+}
+
+.login_area form {
+	background-color: #e0e0e0;
+	padding: 0px 60px;
+	border-radius: 10px;
+	font-weight: bolder;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.login_area form h1 {
+	color: rgb(9, 4, 43);
+	text-align: center;
+}
+
+.login_area form button {
+	height: 50px;
+	padding: 10px;
+	border: none;
+	background-color: rgb(9, 4, 43);
+	color: white;
+	border-radius: 5px;
+	font-weight: bold;
+	font-size: 18px;
+	cursor: pointer;
+	margin-top: 15px;
+	margin-bottom: 30px;
+}

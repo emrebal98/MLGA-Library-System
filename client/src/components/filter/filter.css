@@ -1,0 +1,54 @@
+.select__box {
+	/* position: relative; */
+	background-color: white;
+	width: 200px;
+	border-radius: 0.5rem;
+	outline: 0.01rem solid #e5e5e5;
+	cursor: pointer;
+	white-space: nowrap;
+	text-align: left;
+	/* padding: 1rem 0; */
+	user-select: none;
+}
+
+.select__box:active {
+	background: #f6f6f6;
+}
+
+.select__box p {
+	padding: 0.5rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.select__box__icon {
+	margin-left: 0.5rem;
+	font-size: 1.2rem;
+}
+
+.select__box__list {
+	visibility: hidden;
+	position: absolute;
+	background-color: white;
+	right: inherit;
+	overflow-y: scroll;
+	min-height: 8rem;
+	max-height: 10rem;
+	border-radius: 0.5rem;
+	box-shadow: 0 7px 14px 0 rgba(60, 66, 87, 0.08), 0 3px 6px 0 rgba(0, 0, 0, 0.12);
+	margin-top: 0.05rem;
+	z-index: 999;
+}
+.select__box__list.show {
+	visibility: visible;
+}
+.select__box__list li {
+	list-style: none;
+	padding: 0.5rem 1rem;
+	cursor: pointer;
+}
+
+.select__box__list li:hover {
+	background-color: #f6f6f6;
+}

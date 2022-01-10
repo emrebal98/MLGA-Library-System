@@ -10,8 +10,8 @@ function Login() {
 	const { authed, login } = useAuth();
 	const [error, setError] = useState();
 	const [values, setValues] = useState({
-		email: "test@test.com",
-		password: "123",
+		email: "",
+		password: "",
 	});
 
 	const inputs = [

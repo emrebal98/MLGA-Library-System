@@ -457,6 +457,13 @@ function LibraryDatabase() {
 								>
 									<option value="Science">Science</option>
 									<option value="History">History</option>
+									<option value="Law">Law</option>
+									<option value="Literature">Literature</option>
+									<option value="Philosophy">Philosophy</option>
+									<option value="Health">Health</option>
+									<option value="Architecture">Architecture</option>
+									<option value="Psychology">Psychology</option>
+									<option value="Programming">Programming</option>
 								</select>
 							</div>
 							<div className="input__field">

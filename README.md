@@ -58,10 +58,10 @@ This project is under license from MIT. For more details, see the [LICENSE](LICE
 
 
 Made with :heart: by 
-<a href="https://github.com/emrebal98" target="_blank">Emre</a> -
-<a href="https://github.com/tugcekeskin" target="_blank">Tuğçe</a> -
-<a href="https://github.com/berkakbulbul" target="_blank">Berk</a> -
-<a href="https://github.com/nursenaaksu" target="_blank">Nursena</a>
+<a href="https://github.com/emrebal98" target="_blank">Emre Bal</a> -
+<a href="https://github.com/tugcekeskin" target="_blank">Tuğçe Keskin</a> -
+<a href="https://github.com/berkakbulbul" target="_blank">Berk Akbülbül</a> -
+<a href="https://github.com/nursenaaksu" target="_blank">Nursena Aksu</a>
 
 &#xa0;
 
